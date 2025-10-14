@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shloka Kamdar · Cloud & DevOps</title>
+  <meta name="description" content="Shloka Kamdar — Cloud/DevOps: AWS, CI/CD, automation. Portfolio & contact."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Shloka Kamdar</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="container">
+        <!-- Animated SVG Cloud -->
+        <svg class="cloud-bg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 70 Q30 70 30 50 Q30 30 50 30 Q50 10 70 10 Q90 10 90 30 Q110 30 110 50 Q110 70 90 70 Z" fill="rgba(255,255,255,0.1)"/>
+        </svg>
+        
+        <h1>Hi, I'm <span>Shloka Kamdar</span>.</h1>
+        <div class="role-pill">Cloud Engineer · DevOps</div>
+        <p class="helper">I build pragmatic, secure, and automated cloud stacks — focused on AWS, containers, CI/CD, and developer happiness.</p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="#experience">View Experience</a>
+          <a class="btn btn-outline" href="#contact">Contact me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container about-grid">
+        <div class="card">
+          <h2>About</h2>
+          <p>I design and operate cloud-native infra that just works. My stack blends Python + JS full-stack chops with pragmatic DevOps — CI/CD, automation, containers, observability, and secure infra on AWS.</p>
+          <p class="helper">Currently studying BCA (Tilak Maharashtra Vidyapeeth). I love clean scripts, tiny automations that save hours, and thoughtfully written docs.</p>
+        </div>
+        <aside>
+          <div class="stat-card card">
+            <strong class="faint">Primary</strong>
+            <div style="margin-top:8px">AWS · CI/CD · Linux · Docker · Kubernetes (learning)</div>
+          </div>
+          <div class="stat-card card">
+            <strong class="faint">Full-stack</strong>
+            <div style="margin-top:8px">Python · Django · React · MySQL</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container card">
+        <h2>Skills & Tooling</h2>
+        <div class="skill-list" aria-hidden="false">
+          <li>AWS: EC2, S3, CloudFront, IAM, Route53</li>
+          <li>CI/CD: GitHub Actions, Jenkins</li>
+          <li>Containers: Docker, Kubernetes (basics)</li>
+          <li>Linux, Shell, Nginx</li>
+          <li>Python, JS, Bash</li>
+          <li>Databases: MySQL, SQLite</li>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section alt">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="project-grid">
+          <article class="project-card card">
+            <h3>Cloud Engineer Intern · Nixace Technologies <span class="faint"> · Currently</span></h3>
+            <p>Working on AWS infra, CI/CD, monitoring, and automation to keep deployments reliable and repeatable.</p>
+            <div class="tags"><span>AWS</span><span>EC2</span><span>GitHub Actions</span></div>
+          </article>
+          <article class="project-card card">
+            <h3>Web Intern · Togaa <span class="faint"> · Jun 2025 – Aug 2025</span></h3>
+            <p>Collaborated on performance and environment configuration for storefront delivery.</p>
+            <div class="tags"><span>Shopify</span><span>DNS</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-card" aria-live="polite">
+        <h2>Contact</h2>
+        <p class="helper">Drop me a note — project, collab, or just a hi. Files allowed (resume, screenshots). Your message will be sent directly to my email.</p>
+
+        <form id="contactForm" enctype="multipart/form-data" novalidate aria-label="Contact form">
+          <div class="row">
+            <input type="text" name="name" placeholder="Your name" aria-label="Your name" required class="small" />
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" required class="small" />
+          </div>
+
+          <textarea name="message" placeholder="Your message..." aria-label="Message" required></textarea>
+
+          <div class="file-drop-zone" id="fileDropZone" role="button" tabindex="0" aria-label="File drop zone">
+            <div>📎 Drag & drop a file here or click to browse</div>
+            <div class="helper">Max 4MB • PDF, images, docs</div>
+            <input id="fileInput" type="file" name="attachment" accept=".pdf,.png,.jpg,.jpeg,.txt,.doc,.docx" style="display:none">
+            <div class="file-info" id="fileInfo">
+              <span class="file-name" id="fileName"></span>
+              <span class="file-size" id="fileSize"></span>
+              <button type="button" class="remove-file" id="removeFile" aria-label="Remove file">×</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div style="display:flex;gap:8px;align-items:center;">
+              <button id="submitBtn" class="btn btn-primary" type="submit">Send Message</button>
+            </div>
+          </div>
+
+          <!-- honeypot to reduce spam -->
+          <input type="text" name="website" style="display:none" aria-hidden="true">
+          <p id="responseMsg" class="helper" style="margin-top:8px"></p>
+          <div class="progress" style="margin-top:8px;display:none"><div></div></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Shloka Kamdar · Built with clouds & coffee</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
