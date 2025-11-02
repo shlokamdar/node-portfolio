@@ -67,7 +67,7 @@ transporter.verify((err) => {
 });
 
 // Contact form endpoint
-app.post('/api/contact', upload.single('attachment'), async (req, res) => {
+app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
     
@@ -103,37 +103,13 @@ app.post('/api/contact', upload.single('attachment'), async (req, res) => {
       html: emailContent
     };
 
-    // Add attachment if present
-    if (req.file) {
-      mailOptions.attachments = [{
-        filename: req.file.originalname,
-        path: req.file.path
-      }];
-      emailContent += `<p><strong>Attachment:</strong> ${req.file.originalname}</p>`;
-    }
-
     // Send email
     await transporter.sendMail(mailOptions);
-
-    // Clean up uploaded file after sending
-    if (req.file) {
-      fs.unlink(req.file.path, (err) => {
-        if (err) console.error('Error deleting file:', err);
-      });
-    }
 
     res.json({ message: 'Email sent successfully!' });
 
   } catch (error) {
     console.error('Error sending email:', error);
-    
-    // Clean up uploaded file on error
-    if (req.file) {
-      fs.unlink(req.file.path, (err) => {
-        if (err) console.error('Error deleting file:', err);
-      });
-    }
-    
     res.status(500).json({ message: 'Failed to send email. Please try again.' });
   }
 });
